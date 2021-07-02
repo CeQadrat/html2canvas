@@ -36,7 +36,7 @@ jobs:
       - name: Pack
         run: |
           npm pack
-          mv html2canvas-*.tgz html2canvas.tgz
+          mv ceqadrat-html2canvas-*.tgz html2canvas.tgz
           tar --list --verbose --file=html2canvas.tgz
       - name: Upload npm pack
         uses: actions/upload-artifact@v2
@@ -231,7 +231,7 @@ jobs:
           node-version: 12
           registry-url: 'https://registry.npmjs.org'
       - name: NPM Publish
-        run: cd npm/package && npm publish
+        run: cd npm/package && npm publish --scope=ceqadrat
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   docs:
